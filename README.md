@@ -39,12 +39,12 @@ Questa istruzione stamperà a video la seguente frase
 Come si puù notare all'interno delle parentesi tonde() sono stati inseriti in ordine il **formato** dell'autput e un **argomento**.
 Il **formato** può contenere una frase per indicare cosa verrà stampato e delle **direttive**. Un esempio di direttiva è il '%d' inserito dopo 'a = '. Esso indica che in quella parte dell'**argomento** ci sarà un numero intero.
 Altre direttive possibili sono le seguenti:
--%d o %i|	intero
--%u	|	unsiged
--%s	|	Stringa
--%c	|	Char
--%f	|	float
--%g	|	double
+- %d o %i|	intero
+- %u	|	unsiged
+- %s	|	Stringa
+- %c	|	Char
+- %f	|	float
+- %g	|	double
 
 Il numero di argomenti necessari è indicato dal numero di direttive inserite.
 
@@ -61,26 +61,66 @@ Come il printf() anche la **scanf()** ha la sintassi composta da
 
 Dunque il valore acquisito da a sarà quello immesso dall'utente.
 Anche nello scanf() si può avere un testo formattato avanzato. per esempio con "*" si può saltare l'input del dato.
+Per esempio:
+>1	#include <stdio.h>
+>2
+>3 int main(){
+>4         int a = 0;
+>5         printf("Inserisci il valore di a: ");
+>6         scanf("%*d %d", &a);
+>7         printf("Il valore di a e' : %d", a);
+>8 
+>9         return 0;
+>10 }
+
+L'output che ne verrà fuori sarà:
+
+>Inserisci il valore di a: 23 43
+>Il valore di a e': 43
+
+#### Direttive
+##### Include
+Utilizzando all'initzio del programma la direttiva *#include* posso aggiungere al mio programma un file.
+> #include [file]
+
+Esso ha 2 sintassi, una per includere un file di sitema, una per includere un file del programmatore di cui deve specificare la locazione.
+> #include <stdio.h> \\ aggiunge una libreria già presente nel sitema
+
+oppure
+
+> #include "miofile.h" \\ aggiunge un file chiamato *miofile.h* presente nella stessa cartella dove è presente il file del programma.
+
+##### Define
+Il *#Define* viene usato per aggingere una costante al programma. Essa non potrà essere in alcun modo variata
+> #define N 20
+
+Come si può notare una costante è per convenzione indicata con un valore o un nume in maiuscolo.
+
+
+
+
+
+
 
 
 # Architettura del computer
 L'architettura di un computer è relativamente semplice, infatti contiene:
--*Un'unità di elaborazione*
--*Bus* per il trasferimento di dati
--Una o pià *unità di ingresso* (Tastiera e mouse)
--Una o più *Unità di uscita* (Monitor e stampante)
--*Memoria* (RAM e ROM) + *Memoria di massa*
+- *Un'unità di elaborazione*
+- *Bus* per il trasferimento di dati
+- Una o pià *unità di ingresso* (Tastiera e mouse)
+- Una o più *Unità di uscita* (Monitor e stampante)
+- *Memoria* (RAM e ROM) + *Memoria di massa*
 
 ## Microprocessore
 Il microprocessore è l'unità centrale del computer, colei che elabora i dati. Esso realizza le funzioni di una *cpu*
 ### CPU
 La CPU (Central Processing Unit) è divisa in varie parti:
--Unità di decodifica istruzioni
--Unità di gestione degli indirizzi
--Unità di gestione dei bus
--*ALU*
--*CU* (Control Unit)
--*Registri*
+- Unità di decodifica istruzioni
+- Unità di gestione degli indirizzi
+- Unità di gestione dei bus
+- *ALU*
+- *CU* (Control Unit)
+- *Registri*
 #### Registri
 Elenchi di memoria locale usati per conservare temporaneamente dei dati. Di solito si tratta di un immagazzinamento degli indirizzi o risultati parziali (Prima della Cache)
 #### Unità Operativa
@@ -95,9 +135,9 @@ Questi passaggi vengono temporizzati da un elemento detto clock, ossia un tepori
 I *Bus* sono i componenti adibiti al trasporto di informazioni. Trasportano un solo dato alla volta la cui grandezza è specificata dall'**Ampiezza** del Bus. Il numero di dati che trasportano in un secondo è dato dalla **frequenza**.
 Dunque è molto importante dimensionarlo bene poiché si potrebbe creare una situazione a "Collo di bottiglia".
 Un Bus puù essere diviso in tre *"Sotto Bus"*
--Data Bus
--Addresss Bus
--Control Bus
+- Data Bus
+- Addresss Bus
+- Control Bus
 Attraverso questi dati si può capire la **Massima Dimensione Interna**.
 La dimensione dell'**Abus** determina il numero massimo di celle. La dimensione della memoria si può comprendere attraverso un calcolo:
 > 2^Abus*Dbus
