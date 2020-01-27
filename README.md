@@ -29,14 +29,14 @@ Per la funzione di *Output* viene usata l'istruzione *printf()*.
 Per la funzione di *Input* viene usata l'istruzione *scanf()*.
 Esse hanno una sintassi similie, ma il loro funzionamento è leggermente diverso!
 #### Printf
-'''
+```
 int var_a = 3;
 printf("Valore di a = %d", var_a);
-'''
+```
 Questa istruzione stamperà a video la seguente frase
-'''
+```
 Valore di a = 3
-'''
+```
 
 Come si puù notare all'interno delle parentesi tonde() sono stati inseriti in ordine il **formato** dell'autput e un **argomento**.
 Il **formato** può contenere una frase per indicare cosa verrà stampato e delle **direttive**. Un esempio di direttiva è il '%d' inserito dopo 'a = '. Esso indica che in quella parte dell'**argomento** ci sarà un numero intero.
@@ -56,16 +56,16 @@ Per esempio scrivendo "%.[dimensione]" si può indicare il numero di cifre decim
 
 #### scanf()
 Come il printf() anche la **scanf()** ha la sintassi composta da
-'''
+```
 scanf(<formato>,n<arg>);
-'''
+```
 **Vi è solo un'importante differenza! Gli argomenti nella scanf() devo essere passti per idirizzo, ossia preceduti da un '&'**
 scanf("Inserisci il valore di a: %d", *&*a);
-'''
+```
 Dunque il valore acquisito da a sarà quello immesso dall'utente.
 Anche nello scanf() si può avere un testo formattato avanzato. per esempio con "*" si può saltare l'input del dato.
 Per esempio:
-'''
+```
 #include <stdio.h>
 
 int main(){
@@ -76,30 +76,30 @@ int main(){
 
         return 0;
 }
-'''
+```
 L'output che ne verrà fuori sarà:
-'''
+```
 Inserisci il valore di a: 23 43
 Il valore di a e': 43
-'''
+```
 ### Direttive
 #### Include
 Utilizzando all'initzio del programma la direttiva *#include* posso aggiungere al mio programma un file.
 #include [file]
 
 Esso ha 2 sintassi, una per includere un file di sitema, una per includere un file del programmatore di cui deve specificare la locazione.
-'''
+```
 #include <stdio.h> \\ aggiunge una libreria già presente nel sitema
-'''
+```
 oppure
-'''
+```
 #include "miofile.h" \\ aggiunge un file chiamato *miofile.h* presente nella stessa cartella dove è presente il file del programma.
 
 #### Define
 Il *#Define* viene usato per aggingere una costante al programma. Essa non potrà essere in alcun modo variata
-'''
+```
 #define N 20
-'''
+```
 Come si può notare una costante è per convenzione indicata con un valore o un nume in maiuscolo.
 
 ### Operatori vari
@@ -107,25 +107,25 @@ Come si può notare una costante è per convenzione indicata con un valore o un 
 In alcuni casi è necessario dover converire il *tipo* di una variabile.
 Se vogliamo conoscere il valore char di un numero intero dobbiamo prima farlo leggere come un *char* dal programma.
 Per fare ciò si usa il **casting**, ossia inserendo prima del nome della variabile e tra parentesi il tipo di variabile in cui vogliamo convertire.
-'''
+```
 char a = 'M';
   printf("a = %c\nIl suo valore e': %d",a ,(int)a);
-'''
+```
 Il risultato sarà...
-'''
+```
 a = M
 >Il suo valore e': 77
-'''
+```
 #### Sizeof()
 Serve semplicemente per calcolare il numero di byte occupati dai vari tipi di dato. Se faccio *sizeof(int)* il risultat sarà 4.
-'''
+```
 int a;
 printf(sizeof(a))
-'''
+```
 Che stamperà:
-'''
+```
 4
-'''
+```
 ### Cicli
 #### For
 #### While
@@ -142,28 +142,28 @@ Un array o vettore è un insieme di variabili dello stesso tipo
 ### Funzioni e procedure
 Una funzione è un **sottoprogramma** che ritorna un risultato indicato. Esso viene richiamato all'interno del programma principale (Main());
 
-'''
+```
 int stampa_num(){
    printf("%d", x);
 }
 int main(){
    stampa_num()
 }
-'''
+```
 
 Una procedura è un **sottoprogramma** che non ritorna un risultato...
 E' una funzione col void.
 
 Ad una funzione possono essere aggiunti dei parametri di ingresso
 
-'''
+```
 int stampa_num(int x){
    printf(x);
    return 0;
 }
-'''
+```
 E' importante però sapere che quando viene richiamata una funzione che chiede un paramtro bisogna passarglielo poiché la funzione non riconosce il valore dichiarato. Infatti seguendo l'esempio precedente se inserisco nel main() una variabile x non sarà la stessa che chiede la funzione.
-'''
+```
 void stampa_num(int x){
    printf("%d", x); \\ NON STAMPERÀ IL VALORE INSERITO NEL MAIN
 }
@@ -173,7 +173,7 @@ int main(){
    stampa_num();
 }
 return 0;
-'''
+```
 
 Per una questione di ordine del programma si potrebbe preferire inserire un **prototipo**, ossia la funzione viene dichiarata sopra il main, ma il suo funzionamento viene indicato al di sotto.
 
