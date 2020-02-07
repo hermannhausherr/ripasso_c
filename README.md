@@ -189,22 +189,34 @@ L'architettura di un computer è relativamente semplice, infatti contiene:
 - *Memoria* (RAM e ROM) + *Memoria di massa*
 
 ## Microprocessore
-Il microprocessore è l'unità centrale del computer, colei che elabora i dati. Esso realizza le funzioni di una *cpu*
+Il microprocessore è un chip che realizza le funzioni di una CPU in un computer
 ### CPU
+E' il componente che esegue le varie istruzioni dettate dal programma. Il suo funzionamento è diviso
+in 4 fasi:
+1. Fetching
+Il processore prende dalla memoria tutti i dati necessari per eseguire l'operazione e inizialmente
+li sposta nella sua memoria interna (Cache).
+2. Decoding
+Tutti i dati nella memoria vengono convertiti in codice binareio, comprensibile dal
+microprocessore.
+3. Executing
+Elabora i dati.
+4. Write Back
+Copia il risultato in memoria.
 La CPU (Central Processing Unit) è divisa in varie parti:
 - Unità di decodifica istruzioni
 - Unità di gestione degli indirizzi
 - Unità di gestione dei bus
-- *ALU*
-- *CU* (Control Unit)
-- *Registri*
+- *ALU* = Svolge le operazioni aritmetiche fondamentali
+- *CU* (Control Unit) = Si occupa di stabilire la logica e l'ordine delle operazioni da eseguire.
+- *Registri* = Memorie che immagazzinano i dati in fase di esecuzione.
 #### Registri
 Elenchi di memoria locale usati per conservare temporaneamente dei dati. Di solito si tratta di un immagazzinamento degli indirizzi o risultati parziali (Prima della Cache)
 #### Unità Operativa
 E' colei che svolge le operazioni richieste
 #### ALU
 E' la parte che svolge i calcoli composta da circuiti. Essa procede  in un ordine specifico
-1. Preleva ò'istruzione 
+1. Preleva l'istruzione 
 2. Interpreta l'istruzione
 3. Esegue l'istruzione
 Questi passaggi vengono temporizzati da un elemento detto clock, ossia un teporizzatore all'interno della cpu. Il suo multiplo intero in cui un eperazione viene svolta si chiama *ciclo macchina*
@@ -218,6 +230,13 @@ Un Bus puù essere diviso in tre *"Sotto Bus"*
 Attraverso questi dati si può capire la **Massima Dimensione Interna**.
 La dimensione dell'**Abus** determina il numero massimo di celle. La dimensione della memoria si può comprendere attraverso un calcolo:
 > 2^Abus*Dbus
-Invece la massima memoria esterna dipende solo dai Bus di I/O
 
+Invece la massima memoria esterna dipende solo dai Bus di I/O
+### Cache
+E' una memoria molto rapida che si occupa di prelevare le informazioni dalla ram le immagazzina
+dentro di sé e ler rende immediatamente disponibili al processore.
+### Clock
+E' ciò che detta la velocità del processore. Come visto in precedenza un ciclo è diviso in 4 fasi.
+Ad ogni "colpo" di clock il processore termina un ciclo. La velocità è misurata per miliardi di
+volte al secondo.
 # Sistema Binario
