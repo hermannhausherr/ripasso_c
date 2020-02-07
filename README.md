@@ -238,5 +238,5 @@ dentro di sé e ler rende immediatamente disponibili al processore.
 ### Clock
 E' ciò che detta la velocità del processore. Come visto in precedenza un ciclo è diviso in 4 fasi.
 Ad ogni "colpo" di clock il processore termina un ciclo. La velocità è misurata per miliardi di
-volte al secondo.
+volte al secondo. Il clock è misurato in frequenza "Hertz"
 # Sistema Binario
