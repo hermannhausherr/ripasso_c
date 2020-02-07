@@ -96,7 +96,7 @@ Esso ha 2 sintassi, una per includere un file di sitema, una per includere un fi
 oppure
 ```
 #include "miofile.h" \\ aggiunge un file chiamato *miofile.h* presente nella stessa cartella dove è presente il file del programma.
-
+```
 #### Define
 Il *#Define* viene usato per aggingere una costante al programma. Essa non potrà essere in alcun modo variata
 ```
