@@ -59,8 +59,10 @@ Come il printf() anche la **scanf()** ha la sintassi composta da
 ```
 scanf(<formato>,n<arg>);
 ```
-**Vi è solo un'importante differenza! Gli argomenti nella scanf() devo essere passti per idirizzo, ossia preceduti da un '&'**
-scanf("Inserisci il valore di a: %d", *&*a);
+**Vi è solo un'importante differenza! Gli argomenti nella scanf() devo essere passti per indirizzo, ossia preceduti da un '&'**
+
+```
+scanf("%d", *&*a);
 ```
 Dunque il valore acquisito da a sarà quello immesso dall'utente.
 Anche nello scanf() si può avere un testo formattato avanzato. per esempio con "*" si può saltare l'input del dato.
